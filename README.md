@@ -7,7 +7,7 @@ It's also important to note that I'm writing this just because it's the way I le
 
 With all of that said, if you're reading this, thank you, and I hope we can learn together :).
 
-### First steps
+## First steps
 
 To begin with PHP, on your VSCode, create a folder and call it "public". Inside it, create an archive and call it "index.php"
 
@@ -59,7 +59,7 @@ Meanwhile, when using `include`, the file will try to execute anyway, even with 
 
 There are variations to these keywords: the `include_once` and `require_once` . These make sure that the files are being executed only one time in the application they are included.
 
----
+## Concepts
 
 ### Variables
 
@@ -123,7 +123,7 @@ Variables can be of some different types:
 
 Constants are, as they say, constants. They are a kind of "counterpart" to the variables, meaning that the value wont change.
 
-To define a constand, we use the function `define(x, y)`, where x is the constant name and y is the value it'll receive. As stated, it cannot be changed. 
+To define a constand, we use the function `define(x, y)`, where x is the constant name and y is the value it'll receive. As stated, it cannot be changed.
 
 If we try to define the same constant twice with different values, it'll return an error, saying that it is already defined.
 
@@ -138,7 +138,6 @@ PHP has some pre-defined constants on it's core, for example:
 * \_\_FUNCTION_\_: when inside a funcion, returns the function name;
 * \_\_METHOD\_\_:  when inside a function or method, returns the function or method name;
 * DIRECTORY_SEPARATOR: substitutes the "/";
-
 
 If we want to know if a constant is already defined or not, we can use a conditional structure:
 
@@ -157,7 +156,6 @@ This will print the message if the constant is already defined.
 
 If you don't know yet about conditionals, we'll see that later in this page.
 
-
 Another thing you can do is return all the constants the php has defined:
 
 ```php
@@ -170,6 +168,114 @@ Another thing you can do is return all the constants the php has defined:
 
 This will return a big message on the page, that seems like an error, but it's not. It shows every constant defined by php system that you can use.
 
+### Instructions
+
+Instructions are every line of code finished with `;` .
+
+The last line of a php file does not need `;` to end the last instruction, because the closing tag of php (`?>`) counts as the end of an instruction as well.
+
+---
+
+### Aritimetic Operators
+
+The Aritimetic Operators refer to any operator used for, of course, aritmetic operations. These include Sum, Subtraction, Multiplication and Division.
+
+#### Sum
+
+The aritimetic operator for sum is `+`. It adds the values that are placed around it.
+
+```php
+<?php
+	$number1= 10;
+	$number2= 20;
+
+	$sum= $number1 + $number2;
+?>
+```
+
+The `$sum` variable will get the sum of the variables `$number1` and `$number2`, in this case, `10+20 = 30`.
+
+
+#### Subtraction
+
+The aritimetic operator for subtraction is `-`. It subtracts the value on the right from the value on the left of it.
+
+```php
+<?php
+	$number1= 10;
+	$number2= 20;
+
+	$sub= $number2 - $number1;
+?>
+```
+
+The `$sub` variable will get the subtraction of the variable `$number1` from `$number2`, in this case, `20-10 = 10`.
+
+
+#### Multiplication
+
+The aritimetic operator for multiplication is `*`. It multiplies the values placed around it.
+
+```php
+<?php
+	$number1= 10;
+	$number2= 20;
+
+	$mult= $number1 * number2;
+?>
+```
+
+The `$mult` variable will get the multiplication of the variables `$number1` and `$number2`, in this case, `10*20 = 200`.
+
+#### Division
+
+The aritimetic operator for division is `/`. It divides the value on the left for the value on the right.
+
+```php
+<?php
+	$number1= 10;
+	$number2= 20;
+
+	$div= $number2 / $number1;
+?>
+```
+
+The `$div` variable will get the division of the variable `$number2` for `$number1`, in this case, `20/10 = 2 `.
+
+
+#### Modulus
+
+The aritimetic operator for modulus is `%`. It returns the rest of the division between the first and the second number.
+
+```php
+<?php
+	$number1= 10;
+	$number2= 20;
+
+	$mod= 20 % 10;
+?>
+```
+
+The `$mod` variable will get the modulus between `$number1` and `$number2`, in this case, 0, because it's an exact division.
+
+#### Operator precedence
+
+When calculating a bigger expression, there is an [order of what operations it&#39;ll calculate first](https://www.php.net/manual/en/language.operators.precedence.php#:~:text=The%20precedence%20of%20an%20operator,to%20force%20precedence%2C%20if%20necessary. "Open PHP documentation"). In PHP is no different. The way expressions are calculated are:
+
+1. Parenthesis
+2. Brackets
+3. Curly brackets
+4. Multiplication/Division
+5. Sum/Subtraction
+
+When they are in the same "precedence level", the file just calculate from left to right of the expression.
+
+---
+
+
+
+
+
 ---
 
 ### Extra: PHP Cheatsheet
@@ -179,8 +285,10 @@ This will return a big message on the page, that seems like an error, but it's n
 | echo      | echo "Hello World";     | Prints the message between quotes on the page.                      |
 | gettype() | gettype("Hello World"); | Function to return the datatype of the argument between parentesis. |
 
-
 ---
+
+
+
 
 ### Extra 2: PHP with HTML on the same file
 
@@ -200,6 +308,5 @@ Within a PHP file, it is possible to include your HTML code aswell. It is simple
 	</body>
 </html>
 ```
-
 
 This allows the utilization of the PHP funcionalities directly with HTML. Even though this seems useful, it is not used too often anymore.
