@@ -117,6 +117,58 @@ Variables can be of some different types:
 * Null
   * It's the absence of value. That means it represents something that has none of the datatypes and no value whatsoever.
 
+---
+
+### Constants
+
+Constants are, as they say, constants. They are a kind of "counterpart" to the variables, meaning that the value wont change.
+
+To define a constand, we use the function `define(x, y)`, where x is the constant name and y is the value it'll receive. As stated, it cannot be changed. 
+
+If we try to define the same constant twice with different values, it'll return an error, saying that it is already defined.
+
+```php
+<?php
+	define("NAME", "Marto");
+?>
+```
+
+PHP has some pre-defined constants on it's core, for example:
+
+* \_\_FUNCTION_\_: when inside a funcion, returns the function name;
+* \_\_METHOD\_\_:  when inside a function or method, returns the function or method name;
+* DIRECTORY_SEPARATOR: substitutes the "/";
+
+
+If we want to know if a constant is already defined or not, we can use a conditional structure:
+
+```php
+<?php
+	define("NAME", "MARTIN");
+
+	if(defined(NAME)){
+		echo "this constant is already defined";
+	}
+
+?>
+```
+
+This will print the message if the constant is already defined.
+
+If you don't know yet about conditionals, we'll see that later in this page.
+
+
+Another thing you can do is return all the constants the php has defined:
+
+```php
+<?php
+	$cons=get_defined_constants(true);
+	var_dump($cons);
+
+?>
+```
+
+This will return a big message on the page, that seems like an error, but it's not. It shows every constant defined by php system that you can use.
 
 ---
 

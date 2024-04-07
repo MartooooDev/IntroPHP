@@ -1,16 +1,16 @@
 <?php
     //String
-    $nome               =   "Martin";
+    $name               =   "Martin";
 
     //Number
     //Integer
-    $numeroInteiro      =   12;
+    $integerNumber      =   12;
     //Double/ Float
-    $numeroFracionado   =   3.14;
+    $floatNumber   =   3.14;
     
     //Boolean
-    $mundoExplodiu      =   False;
-    $vouAprenderPHP     =   True;
+    $worldExploded      =   False;
+    $iWillLearnPHP     =   True;
 
     //Arrays
 
