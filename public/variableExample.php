@@ -17,6 +17,10 @@
     $array              =   [1, 2, 3,];
     //Object
 
+        class Person{
+
+        }
+        
     //Null
 
 ?>

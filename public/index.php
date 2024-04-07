@@ -5,11 +5,7 @@ require "./teste.php"; #Não executa nada caso o arquivo não exista/ esteja com
 include_once "./teste.php"; #Garante que o arquivo seja executado apenas uma vez
 require_once "./teste.php"; #igualmente o include_once, mas nas funcionalidades do require
 
-
-include "./variaveis.php";
-
-
 echo "Hello World!";
-echo $name;
+echo $nome;
 
 ?>
