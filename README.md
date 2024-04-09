@@ -227,6 +227,7 @@ The aritimetic operator for multiplication is `*`. It multiplies the values plac
 
 The `$mult` variable will get the multiplication of the variables `$number1` and `$number2`, in this case, `10*20 = 200`.
 
+
 #### Division
 
 The aritimetic operator for division is `/`. It divides the value on the left for the value on the right.
@@ -272,6 +273,101 @@ When they are in the same "precedence level", the file just calculate from left 
 
 ---
 
+### Comparation operators
+
+Comparation operators compare two values and return a boolean result (True or False).
+
+
+| Operator | Name                    | Description                                                                |
+| -------- | ----------------------- | -------------------------------------------------------------------------- |
+| <        | less than               | verifies if the first number is less than the second number                |
+| >        | greater than            | verifies if the first number is greater than the second number             |
+| <=       | less or equal to        | verifies if the first number is less than or equal to the second number    |
+| >=       | greater or equal to     | verifies if the first number is greater than or equal to the second number |
+| !=       | different value         | verifies if the first and second values are different                      |
+| !==      | different value or type | verifies if the first and second values or types are different             |
+| ==       | equal value             | verifies if the first and second values are equal                          |
+| ===      | equal value and type    | verifies if the first and second values and types are equal               |
+
+
+### Logical Operators
+
+Logical operators compares booleans to get to a bollean result (Tabela verdade foda* ver dps)
+
+| Operator | Name | Description                                                                                 |
+| -------- | ---- | ------------------------------------------------------------------------------------------- |
+| &&       | and  | If both the booleans are true, returns true. If one or none of them is false, returns false |
+| \|\|     | or   | If one of the values is true, returns true. Only returns false if both are false.           |
+
+*The 'and' and 'or' are also possible to be used, but, for precedence reasons, it's better to always use '&&' and '||'
+
+---
+
+### Truthy and Falsy
+
+- Still don't understand. Study more later
+
+
+---
+
+### If and else
+
+During development, you'll be faced with situations where you only want a code to be executed if something happens.
+
+For thos situations, PHP got the `if` statement. This will check if something is true, and execute only if it is.
+
+When using the statement, you can use logic, aritmetic and comparation operators, because they return boolean values, used by the if statement.
+
+```php
+<?php
+	$number1= 30;
+	$number2= 50;
+	if(number1 > number2){
+		echo "number1 is greater than number2";
+	}
+?>
+```
+
+```php
+<?php
+	$n1=30;
+	$n2=50;
+	$isAdmin= True;
+
+	if(number1 > number2 && isAdmin){
+		echo "Thats true";
+	}
+
+?>
+```
+
+
+Although this sintax does something when the argument is `True`, it does nothing if it is `False`. That's why we use the `else `statement. It will execute if the argument isn't true for any ifs declared before it.
+
+```php
+<?php
+	if(something){
+		#do something
+	} else {
+		#do another thing
+	}
+?>
+```
+
+
+
+There is also a special syntax that can be used, only being one line of code: 
+
+```php
+<?php
+ echo ($statement)	?	"option if true"	:	"option if false";
+	#Variable/ statement
+	#its like saying if(statement){echo "option if true";} else {echo "option if false";}
+?>
+```
+
+
+### Switch
 
 
 
@@ -310,3 +406,54 @@ Within a PHP file, it is possible to include your HTML code aswell. It is simple
 ```
 
 This allows the utilization of the PHP funcionalities directly with HTML. Even though this seems useful, it is not used too often anymore.
+
+
+---
+
+### Extra 3: Truth table for logical operators
+
+This is the truth table of comparation for logical operators and results with them
+
+| Boolean1 | L.O. | Boolean2 | Result |
+| :------: | :--: | :------: | :----: |
+|   True   |  II  |   True   |  True  |
+|   True   | \|\| |  False  |  True  |
+|  False  | \|\| |   True   |  True  |
+|  False  | \|\| |  False  | False |
+|   True   |  &&  |   True   |  True  |
+|   True   |  &&  |  False  | False |
+|  False  |  &&  |   True   | False |
+|  False  |  &&  |  False  | False |
+
+
+### No Place yet
+
+- Concatenation:
+
+  - We use "." for concatenating text
+    - ```php
+      <?php
+      	$name= "Martin";
+      	$fullName= $name."Romao";
+      	echo $fullName;  //Will print "Martin Romao"
+      ?>
+      ```
+- Atribuition Operators
+
+  - In order to facilitate some aritmetic operations and atribuitions;
+    - `$num1 `+= `$num2 `-> adds `$num2 `to `$num1 `and set the result to the variable `$num1`
+
+
+- Increment and decrement operators
+
+  - Adds or subtracts 1 from the variable
+  - Before or after the calling of the variable
+  - ```php
+    $number= 10;
+    echo ++$number; //Prints 11 and set the variable to this value.
+    echo $number++; //Prints 10, then turns it to 11, for when using it later.
+
+    echo --$number;
+    echo $number--; //does the same thing as before, but subtracts one instead of adding
+    ```
+- Comparation operators
