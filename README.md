@@ -367,8 +367,43 @@ There is also a special syntax that can be used, only being one line of code:
 ```
 
 
+---
+
 ### Switch
 
+Switch is another type of conditional  statement, like the if/else one. 
+
+However, this one verifies the value instead of conditions to do certain actions.
+
+```php
+<?php
+
+$name= "Martin";
+switch ($name){
+	case "Martin":
+		echo "The name is Martin";
+		break;
+	case "Julia":
+		echo "The name is Julia";
+		break
+	case "Lucas":
+		echo "The name is Lucas";
+		break
+	case default:
+		echo "Name unknown";
+		break;
+}
+
+?>
+```
+
+
+
+---
+
+
+
+### Booleans
 
 
 
