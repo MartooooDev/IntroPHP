@@ -176,7 +176,7 @@ The last line of a php file does not need `;` to end the last instruction, becau
 
 ---
 
-### Aritimetic Operators
+### Arithimetic Operators
 
 The Aritimetic Operators refer to any operator used for, of course, aritmetic operations. These include Sum, Subtraction, Multiplication and Division.
 
@@ -195,7 +195,6 @@ The aritimetic operator for sum is `+`. It adds the values that are placed aroun
 
 The `$sum` variable will get the sum of the variables `$number1` and `$number2`, in this case, `10+20 = 30`.
 
-
 #### Subtraction
 
 The aritimetic operator for subtraction is `-`. It subtracts the value on the right from the value on the left of it.
@@ -210,7 +209,6 @@ The aritimetic operator for subtraction is `-`. It subtracts the value on the ri
 ```
 
 The `$sub` variable will get the subtraction of the variable `$number1` from `$number2`, in this case, `20-10 = 10`.
-
 
 #### Multiplication
 
@@ -227,7 +225,6 @@ The aritimetic operator for multiplication is `*`. It multiplies the values plac
 
 The `$mult` variable will get the multiplication of the variables `$number1` and `$number2`, in this case, `10*20 = 200`.
 
-
 #### Division
 
 The aritimetic operator for division is `/`. It divides the value on the left for the value on the right.
@@ -242,7 +239,6 @@ The aritimetic operator for division is `/`. It divides the value on the left fo
 ```
 
 The `$div` variable will get the division of the variable `$number2` for `$number1`, in this case, `20/10 = 2 `.
-
 
 #### Modulus
 
@@ -277,7 +273,6 @@ When they are in the same "precedence level", the file just calculate from left 
 
 Comparation operators compare two values and return a boolean result (True or False).
 
-
 | Operator | Name                    | Description                                                                |
 | -------- | ----------------------- | -------------------------------------------------------------------------- |
 | <        | less than               | verifies if the first number is less than the second number                |
@@ -288,7 +283,6 @@ Comparation operators compare two values and return a boolean result (True or Fa
 | !==      | different value or type | verifies if the first and second values or types are different             |
 | ==       | equal value             | verifies if the first and second values are equal                          |
 | ===      | equal value and type    | verifies if the first and second values and types are equal               |
-
 
 ### Logical Operators
 
@@ -306,7 +300,8 @@ Logical operators compares booleans to get to a bollean result (Tabela verdade f
 ### Truthy and Falsy
 
 - Still don't understand. Study more later
-
+- truthy= has value
+- falsy= has no value/ null
 
 ---
 
@@ -341,7 +336,6 @@ When using the statement, you can use logic, aritmetic and comparation operators
 ?>
 ```
 
-
 Although this sintax does something when the argument is `True`, it does nothing if it is `False`. That's why we use the `else `statement. It will execute if the argument isn't true for any ifs declared before it.
 
 ```php
@@ -354,9 +348,7 @@ Although this sintax does something when the argument is `True`, it does nothing
 ?>
 ```
 
-
-
-There is also a special syntax that can be used, only being one line of code: 
+There is also a special syntax that can be used, only being one line of code:
 
 ```php
 <?php
@@ -366,12 +358,11 @@ There is also a special syntax that can be used, only being one line of code:
 ?>
 ```
 
-
 ---
 
 ### Switch
 
-Switch is another type of conditional  statement, like the if/else one. 
+Switch is another type of conditional  statement, like the if/else one.
 
 However, this one verifies the value instead of conditions to do certain actions.
 
@@ -397,14 +388,107 @@ switch ($name){
 ?>
 ```
 
+---
+
+### Booleans
+
+Booleans are values of True or False.
+
+These datatypes are normally used to verify some conditions
+
+```php
+<?php
+	//super global variable for identifying if the user is logged
+	$_SESSION['logged']= true
+
+	if($_SESSION[logged]){
+		echo 'user logged';
+	}
+
+
+?>
+```
+
+When comparing something, the result is also a boolean, so
+
+```php
+if(10 <= 11;){
+	//works, because we are giving as argument a comparation resulting in a boolean
+}
+```
+
+---
+
+### Strings
+
+Strings are any sequence of characters between two quotemarks;
+
+In a string, if we include a variable, it'll be read as raw text, meaning that
+
+```php
+<?php
+$age= 10;
+echo 'my age is $age';
+?>
+```
+
+will result in `my age is $age`, instead of changing the variable to its value.
+
+To make it use the desired value, we can use double quotemarks or curly brackets, for more practical displaying, so:
+
+```php
+<?php
+$age= 10;
+echo "my age is {$age}"
+
+?>
+```
+
+would print the correct sentence, `my age is 10`;
+
+Some commands envolving strings:
+
+* `strlen($string)` - returns the amount of characters in the string;
+* `gettype($variable)` - returns the type of the data (used as argument) as a string;
+* `substr($string, $start, $length)` - "cuts" the string, starting at the `$start` °position and counting to the `$length`° position
+* `str_contains($string, "text")` - verifies if a string exists inside another string;
+
+---
+
+### Numbers
+
+There are two numeric datatypes on PHP: Integers and floats
+
+* Integers are whole numbers, negative and positive, including 0;
+* Floats or doubles are broken numbers, with a comma, representing precise numbers;
+
+Unlike most languages, PHP can take numbers declared as strings and use them on arithmetic operations, so we can do this
+
+
+```php
+<?php
+
+	$number1 = '10';
+	echo $number1 + 20;
+
+?>
+```
+
+and it'll result in 30, instead of 1020;
+
+
+Functions:
+
+* is_numeric(`$number`) - verifies if the variable `$number` is a number or not. If given a number in a string format, it'll understand that is a number, unless there are letters together with it.
+* ceil(`$float`) - rounds the float to the closest integer greater than the given one;
+* floor(`$float`) - round the float to the closes integer less than the given one;
 
 
 ---
 
+### Arrays
 
-
-### Booleans
-
+Arrays are used to store multiple values inside a single variable
 
 
 ---
@@ -417,9 +501,6 @@ switch ($name){
 | gettype() | gettype("Hello World"); | Function to return the datatype of the argument between parentesis. |
 
 ---
-
-
-
 
 ### Extra 2: PHP with HTML on the same file
 
@@ -442,7 +523,6 @@ Within a PHP file, it is possible to include your HTML code aswell. It is simple
 
 This allows the utilization of the PHP funcionalities directly with HTML. Even though this seems useful, it is not used too often anymore.
 
-
 ---
 
 ### Extra 3: Truth table for logical operators
@@ -460,7 +540,6 @@ This is the truth table of comparation for logical operators and results with th
 |  False  |  &&  |   True   | False |
 |  False  |  &&  |  False  | False |
 
-
 ### No Place yet
 
 - Concatenation:
@@ -477,8 +556,6 @@ This is the truth table of comparation for logical operators and results with th
 
   - In order to facilitate some aritmetic operations and atribuitions;
     - `$num1 `+= `$num2 `-> adds `$num2 `to `$num1 `and set the result to the variable `$num1`
-
-
 - Increment and decrement operators
 
   - Adds or subtracts 1 from the variable

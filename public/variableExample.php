@@ -26,6 +26,7 @@
     // ----------------------------display------------------------------------------
 
     echo "<h3>Variables/ gettype ('variableExample')</h3>";
+    echo "<p>(defined in 'variableExample.php')</p>";
 
     echo gettype($name)."<br>";
     echo gettype($integerNumber)."<br>";

@@ -1,6 +1,8 @@
 <?php
 
-echo "<h2> Aritmetic Operators </h2>";
+echo "<h3> Arithmetic Operators </h3>";
+echo "<p> (defined in 'arithmeticOperators.php') </p>";
+
 
 $number1= 10;
 $number2= 20;
